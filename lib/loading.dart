@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+
+class LoadingPage extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return new _LoadingState();
+  }
+}
+
+class _LoadingState extends State<LoadingPage>{
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    new Future.delayed(Duration(seconds: 3),(){
+      print("啟動中");
+      //Navigator.of(context).pushReplacement("app");
+    });
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(child: Image.asset('images/loading.jpeg'),);
+  }
+
+}
