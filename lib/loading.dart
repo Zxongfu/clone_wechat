@@ -16,7 +16,7 @@ class _LoadingState extends State<LoadingPage>{
     super.initState();
     new Future.delayed(Duration(seconds: 3),(){
       print("啟動中");
-      //Navigator.of(context).pushReplacement("app");
+      Navigator.of(context).pushReplacementNamed("app");
     });
   }
 

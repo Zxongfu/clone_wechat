@@ -10,7 +10,7 @@ void main() =>
       title: 'wechat',
       theme: mDefaultTheme,
       routes: <String,WidgetBuilder>{
-        // "app":(BuildContext context)=> new App(),
+        "app":(BuildContext context)=> new App(),
         "/frineds":(_)=> new WebView(initialUrl:'https://wx.qq.com/',),
         // "seacrh":(BuildContext context)=> new Search(),
       },
