@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './app.dart';
 import 'loading.dart';
-import 'package:date_format/date_format.dart';
+import './search.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 void main() =>
@@ -12,7 +12,7 @@ void main() =>
       routes: <String,WidgetBuilder>{
         "app":(BuildContext context)=> new App(),
         "/frineds":(_)=> new WebView(initialUrl:'https://wx.qq.com/',),
-        // "seacrh":(BuildContext context)=> new Search(),
+        "search":(BuildContext context)=> new Search(),
       },
       home: new LoadingPage(),
     ));

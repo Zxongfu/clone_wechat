@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import './chat/message_page.dart';
 
 enum ItemType { GroupChat, AddFriends, Qrcode, Payments, Help }
 
@@ -14,35 +15,36 @@ class App extends StatefulWidget {
 class MainState extends State<App> {
   var _currentIndex = 0;
 
-  // MessagePage message;
+  MessagePage? message;
   // Contacts contacts;
   // Found found;
   // Personal personal;
-  // currentPage() {
-  //   switch (_currentIndex) {
-  //     case 0:
-  //       if (message == null) {
-  //         message = new MessagePage();
-  //         return message;
-  //       }
-  //     case 1:
-  //       if (contacts == null) {
-  //         contacts = new Contacts();
-  //         return contacts;
-  //       }
-  //     case 2:
-  //       if (found == null) {
-  //         found = new Found();
-  //         return found;
-  //       }
-  //     case 3:
-  //       if (personal == null) {
-  //         personal = new Personal();
-  //         return personal;
-  //       }
-  //   }
-  //}
+  currentPage() {
+    switch (_currentIndex) {
+      case 0:
+        if (message == null) {
+          message = new MessagePage();
+          return message;
+        }
+      // case 1:
+      //   if (contacts == null) {
+      //     contacts = new Contacts();
+      //     return contacts;
+      //   }
+      // case 2:
+      //   if (found == null) {
+      //     found = new Found();
+      //     return found;
+      //   }
+      // case 3:
+      //   if (personal == null) {
+      //     personal = new Personal();
+      //     return personal;
+      //   }
+    }
+  }
 
+  // 這是封裝menu item方法
   _popMenuItem(String title, {String? imagePath, IconData? icon}) {
     return PopupMenuItem(
         child: Row(
@@ -81,7 +83,7 @@ class MainState extends State<App> {
         actions: [
           GestureDetector(
             onTap: () {
-              //Navigator.pushReplacementNamed(context, 'search');
+              Navigator.pushNamed(context, 'search');
             },
             child: Icon(Icons.search),
           ),
@@ -179,7 +181,7 @@ class MainState extends State<App> {
           color: Color(0xff999999),
         ),
       ),
-      // body: currentPage(),
+      body: currentPage(),
     );
   }
 }
