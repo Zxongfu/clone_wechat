@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import './chat/message_page.dart';
+import './contacts/contacts.dart';
 
 enum ItemType { GroupChat, AddFriends, Qrcode, Payments, Help }
 
@@ -16,21 +17,21 @@ class MainState extends State<App> {
   var _currentIndex = 0;
 
   MessagePage? message;
-  // Contacts contacts;
-  // Found found;
+  Contacts? contacts;
+  // Found? found;
   // Personal personal;
   currentPage() {
     switch (_currentIndex) {
       case 0:
         if (message == null) {
           message = new MessagePage();
-          return message;
         }
-      // case 1:
-      //   if (contacts == null) {
-      //     contacts = new Contacts();
-      //     return contacts;
-      //   }
+        return message;
+      case 1:
+        if (contacts == null) {
+          contacts = new Contacts();
+        }
+        return contacts;
       // case 2:
       //   if (found == null) {
       //     found = new Found();
@@ -41,6 +42,7 @@ class MainState extends State<App> {
       //     personal = new Personal();
       //     return personal;
       //   }
+
     }
   }
 
