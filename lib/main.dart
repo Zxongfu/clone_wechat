@@ -11,7 +11,7 @@ void main() =>
       theme: mDefaultTheme,
       routes: <String,WidgetBuilder>{
         "app":(BuildContext context)=> new App(),
-        "/frineds":(_)=> new WebView(initialUrl:'https://wx.qq.com/',),
+        "/friends":(_)=> new WebView(initialUrl:'https://pc.weixin.qq.com/?t=win_weixin&platform=wx&lang=zh_TW',),
         "search":(BuildContext context)=> new Search(),
       },
       home: new LoadingPage(),

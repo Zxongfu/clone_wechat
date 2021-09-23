@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import './chat/message_page.dart';
 import './contacts/contacts.dart';
+import './found/found.dart';
+import './personal/personal.dart';
 
 enum ItemType { GroupChat, AddFriends, Qrcode, Payments, Help }
 
@@ -18,8 +21,9 @@ class MainState extends State<App> {
 
   MessagePage? message;
   Contacts? contacts;
-  // Found? found;
-  // Personal personal;
+  Found? found;
+  Personal? personal;
+
   currentPage() {
     switch (_currentIndex) {
       case 0:
@@ -32,17 +36,16 @@ class MainState extends State<App> {
           contacts = new Contacts();
         }
         return contacts;
-      // case 2:
-      //   if (found == null) {
-      //     found = new Found();
-      //     return found;
-      //   }
-      // case 3:
-      //   if (personal == null) {
-      //     personal = new Personal();
-      //     return personal;
-      //   }
-
+      case 2:
+        if (found == null) {
+          found = new Found();
+        }
+        return found;
+      case 3:
+        if (personal == null) {
+          personal = new Personal();
+        }
+        return personal;
     }
   }
 
@@ -98,7 +101,8 @@ class MainState extends State<App> {
                   position: RelativeRect.fromLTRB(500.0, 75.0, 10.0, 0.0),
                   items: <PopupMenuEntry>[
                     _popMenuItem('群發', imagePath: 'images/icon_menu_group.png'),
-                    _popMenuItem('加好友', imagePath: 'images/icon_menu_addfriend.png'),
+                    _popMenuItem('加好友',
+                        imagePath: 'images/icon_menu_addfriend.png'),
                     _popMenuItem('掃一掃', imagePath: 'images/icon_menu_scan.png'),
                     _popMenuItem('收付款', icon: Icons.crop_free),
                     _popMenuItem('幫助與反饋', icon: Icons.email),
