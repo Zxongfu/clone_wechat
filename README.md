@@ -2,6 +2,9 @@
 
 A new Flutter project.
 Clone the wechat UI.
+This is for practice,Do not copyright.
+Here below is a original author tutorial website.
+https://www.udemy.com/user/kangshaojun/
 
 ## Getting Started
 
