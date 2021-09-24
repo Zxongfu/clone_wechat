@@ -1,6 +1,7 @@
 # clone_wechat
 
 A new Flutter project.
+Clone the wechat UI.
 
 ## Getting Started
 
